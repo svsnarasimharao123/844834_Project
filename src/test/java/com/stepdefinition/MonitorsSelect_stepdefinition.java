@@ -1,12 +1,12 @@
 package com.stepdefinition;
 
-import com.pages.Laptop_page;
+import com.pages.MonitorsSelect_page;
 
 import cucumber.api.java.en.When;
 
-public class Laptop_stepdefinition {
+public class MonitorsSelect_stepdefinition {
 	
-	Laptop_page laptop=new Laptop_page();
+	MonitorsSelect_page laptop=new MonitorsSelect_page();
 	@When("^the user opens the website$")
 	public void the_user_opens_the_website()  {
 	 laptop.Browser_launch();
