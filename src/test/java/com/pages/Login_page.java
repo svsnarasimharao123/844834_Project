@@ -60,10 +60,10 @@ public class Login_page {
 			
 			
 		}
-	public void login_buttonclick()  {
+	public void login_buttonclick() throws InterruptedException  {
 		driver.findElement(By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]")).click();
-		
-		
+		Thread.sleep(2000);
+		driver.close();
 		
 	}
 		

@@ -34,7 +34,7 @@ WebDriver driver;
 	}
 
 	@Then("^click on login button$")
-	public void click_on_login_button()  {
+	public void click_on_login_button() throws InterruptedException  {
 		login.login_buttonclick();
 		
 	}

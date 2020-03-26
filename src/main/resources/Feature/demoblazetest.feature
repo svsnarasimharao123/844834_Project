@@ -10,7 +10,7 @@ When the user enter the username and password and clicks on singup
 Then take a Screenshot of Sign up
 
 @TC_02
-Scenario Outline: Login in to the demoblaze website
+Scenario Outline:Login in to the demoblaze website
 Given the user launch the application
 When the user clicks on login link
 When the user enter username as "<username>" & password "<password>"
@@ -22,7 +22,7 @@ Examples:
 
 
 @TC_03
-Scenario: Selecting the Monitors from the demobalze application
+Scenario:Selecting the Monitors from the demobalze application
 Given the user launch the demoblaze application
 When the user clicks on montiors under categories
 When the user click on the reuired monitor and added to cart
