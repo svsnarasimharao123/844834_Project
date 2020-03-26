@@ -2,20 +2,22 @@ package com.pages;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Login_page {
+public class Contact_page {
 
 	WebDriver driver;
-	public Login_page(WebDriver driver) 
+	
+	public Contact_page(WebDriver driver) 
 	{
 		this.driver=driver;
 	}
-	public void application(String browser,String url)
+	public void Browserandapp_launch(String browser,String url)
 	{
 		try {
 			
@@ -42,34 +44,55 @@ public class Login_page {
 		{
 			System.out.println("Browser could not be launched");
 		}
+	
+	}	
+
+	public void Contact_link() {
+		
+		driver.findElement(By.xpath("//*[@id=\"navbarExample\"]/ul/li[2]/a")).click();
 	}
-		public void Login_linkclick() {
-			
-			driver.findElement(By.xpath("//a[@id='login2']")).click();
-			
+
+
+public void Details_Enter(String mail,String name,String message)
+
+
+{
 	
-			
-		}
-		
-		public void Enter_logindetails(String username,String password) {
-			
-			
-			driver.findElement(By.id("loginusername")).sendKeys(username);
-			driver.findElement(By.id("loginpassword")).sendKeys(password);
-			
-			
-			
-		}
-	public void login_buttonclick()  {
-		driver.findElement(By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]")).click();
-		
-		
-		
-	}
-		
-		
-	}
+	driver.findElement(By.xpath("//*[@id=\"recipient-email\"]")).sendKeys(mail);
+	driver.findElement(By.xpath("//*[@id=\"recipient-name\"]")).sendKeys(name);
+	driver.findElement(By.xpath("//*[@id=\"message-text\"]")).sendKeys(message);
+	
+}
+
+
+public void Get_message() throws InterruptedException {
 	
 	
 	
+	
+	driver.findElement(By.xpath("//*[@id=\"exampleModal\"]/div/div/div[3]/button[2]")).click();
+	
+	Thread.sleep(2000);
+	Alert alert=driver.switchTo().alert();
+	String s=driver.switchTo().alert().getText();
+	System.out.println(s);
+	
+	alert.accept();	
+driver.close();		
+	
+	
+	
+}
+
+
+
+
+
+
+}
+
+
+
+
+
 

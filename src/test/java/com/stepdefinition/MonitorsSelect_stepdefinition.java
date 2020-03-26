@@ -1,35 +1,51 @@
 package com.stepdefinition;
 
+import org.openqa.selenium.WebDriver;
+
 import com.pages.MonitorsSelect_page;
 
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class MonitorsSelect_stepdefinition {
+WebDriver driver;
 	
-	MonitorsSelect_page laptop=new MonitorsSelect_page();
-	@When("^the user opens the website$")
-	public void the_user_opens_the_website()  {
-	 laptop.Browser_launch();
-		
-		
-	}
-
-	@When("^the user clicks on the Laptops link under categories$")
-	public void the_user_clicks_on_the_Laptops_link_under_categories() {
+	public MonitorsSelect_page mon=new MonitorsSelect_page(driver);
+	
+	
+	@Given("^the user launch the demoblaze application$")
+	public void the_user_launch_the_demoblaze_application() {
 	    
-		laptop.Website_open();
+		
+	mon.Browserandapp_launch("chrome", "https://www.demoblaze.com/");
+		
 	}
 
-	@When("^user selects the required laptop$")
-	public void user_selects_the_required_laptop()  {
-	    	
-	laptop.Laptop_click();
-	laptop.Select_laptop();
-	}
-	@When("^user clicks on addtocart$")
-	public void user_clicks_on_addtocart() throws InterruptedException  {
-		laptop.Addto_Cart();
+	@When("^the user clicks on montiors under categories$")
+	public void the_user_clicks_on_montiors_under_categories()  {
+		
+		mon.Monitors_linkclick();
+		
 	   
 	}
 
+	@When("^the user click on the reuired monitor and added to cart$")
+	public void the_user_click_on_the_reuired_monitor_and_added_to_cart()  {
+	 mon.Monitor_select();
+		
+			
+	}
+
+	@Then("^the user get a message$")
+	public void the_user_get_a_message() throws InterruptedException {
+	    
+		mon.Monitor_Addcart();
+		
+		
+		
+	
+	
+	
+	}
 }

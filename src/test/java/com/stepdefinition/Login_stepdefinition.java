@@ -1,49 +1,45 @@
 package com.stepdefinition;
 
-import java.io.IOException;
+import org.openqa.selenium.WebDriver;
 
 import com.pages.Login_page;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class Login_stepdefinition {
 	
-	Login_page login=new Login_page();
 	
-	@Given("^launch the browser$")
-	public void launch_the_browser()  {
+WebDriver driver;
+	
+	public Login_page  login=new Login_page(driver);
+	
+	
+	@Given("^the user launch the application$")
+	public void the_user_launch_the_application()  {
+	    login.application("chrome", "https://www.demoblaze.com/");
+	}
+	@When("^the user clicks on login link$")
+	public void the_user_clicks_on_login_link()  {
 	    
-		login.Browser_launch();
 		
+		login.Login_linkclick();
 	}
 
-	@When("^open the application$")
-	public void open_the_application()  {
+	@When("^the user enter username as \"([^\"]*)\" & password \"([^\"]*)\"$")
+	public void the_user_enter_username_as_password(String username, String password) {
 		
-		login.Application_open();
-	   
-	}
-
-	@When("^the user clicks on Login$")
-	public void the_user_clicks_on_Login() {
-	   
-		login.Login_click();
-	}
-
-	@When("^enter username as \"([^\"]*)\" & password \"([^\"]*)\" and click on login$")
-	public void enter_username_as_password_and_click_on_login(String username,String password) throws InterruptedException {
 		
-		login.User_details(username,password);
-	   
+		login.Enter_logindetails(username, password);
 	}
 
-	@Then("^take screenshot$")
-	public void take_screenshot() throws IOException  {
-		login.Screenshot_page();
-	   
+	@Then("^click on login button$")
+	public void click_on_login_button()  {
+		login.login_buttonclick();
+		
 	}
 
 
 }
+
+

@@ -2,20 +2,24 @@ package com.pages;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Login_page {
 
+
+public class Description_page {
 	WebDriver driver;
-	public Login_page(WebDriver driver) 
+	
+	public Description_page(WebDriver driver) 
 	{
 		this.driver=driver;
 	}
-	public void application(String browser,String url)
+	public void Browserandapp_launch(String browser,String url)
 	{
 		try {
 			
@@ -42,34 +46,42 @@ public class Login_page {
 		{
 			System.out.println("Browser could not be launched");
 		}
-	}
-		public void Login_linkclick() {
-			
-			driver.findElement(By.xpath("//a[@id='login2']")).click();
-			
 	
-			
-		}
 		
-		public void Enter_logindetails(String username,String password) {
-			
-			
-			driver.findElement(By.id("loginusername")).sendKeys(username);
-			driver.findElement(By.id("loginpassword")).sendKeys(password);
-			
-			
-			
-		}
-	public void login_buttonclick()  {
-		driver.findElement(By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]")).click();
-		
-		
-		
+	
 	}
+	
+	public void Scroll_down() throws InterruptedException
+	
+	{
 		
+		
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,10000)");
+		Thread.sleep(2000);
 		
 	}
 	
 	
+	public void Check_info() throws InterruptedException {
+		
+		String a=driver.findElement(By.xpath("//*[@id=\"fotcont\"]/div[1]/div/div/p")).getText();
+		String  c="We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.";
+		Assert.assertEquals(a,c);
+		String s=driver.findElement(By.xpath("//*[@id=\"fotcont\"]/div[2]/div/div/p[2]")).getText();
+		System.out.println("Contact is:" +s);
+		System.out.println("Aboutus is:" +a);
+		Thread.sleep(2000);
+		driver.close();
+		
+	}
 	
-
+	
+	
+	
+	
+	
+	
+	
+	
+}

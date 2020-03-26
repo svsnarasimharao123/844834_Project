@@ -8,14 +8,17 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Login_page {
+
+
+
+public class Signup_page {
 
 	WebDriver driver;
-	public Login_page(WebDriver driver) 
+	public Signup_page(WebDriver driver) 
 	{
 		this.driver=driver;
 	}
-	public void application(String browser,String url)
+	public void Launchingbrowser(String browser)
 	{
 		try {
 			
@@ -36,40 +39,40 @@ public class Login_page {
 			//to maximize the window
 			driver.manage().window().maximize(); 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			driver.get(url);
+			
 		
 		} catch (WebDriverException e) 
 		{
 			System.out.println("Browser could not be launched");
 		}
-	}
-		public void Login_linkclick() {
-			
-			driver.findElement(By.xpath("//a[@id='login2']")).click();
-			
 	
-			
-		}
-		
-		public void Enter_logindetails(String username,String password) {
-			
-			
-			driver.findElement(By.id("loginusername")).sendKeys(username);
-			driver.findElement(By.id("loginpassword")).sendKeys(password);
-			
-			
-			
-		}
-	public void login_buttonclick()  {
-		driver.findElement(By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]")).click();
-		
-		
-		
 	}
 		
+	public void Launch_Application(String Url) {
 		
+		
+		driver.get(Url);
 	}
-	
-	
-	
 
+
+
+public void Signup_link() {
+	
+	driver.findElement(By.xpath("//a[@id='signin2']")).click();;
+	
+	
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+	
+	

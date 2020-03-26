@@ -7,9 +7,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-features = "E:\\SVSSNR\\SVSSNRPROJECT\\844834_Project\\src\\main\\resources\\Feature\\demoblaze.feature",
-plugin = {"pretty","html:reports/cucumber-html-report"},
-tags = {"@tc_01","@tc_02","@tc_03","@tc_04"},
+features = "src\\main\\resources\\Feature\\demoblazetest.feature",
+plugin = {"pretty", "html:reports/cucumber-html-report","json:reports/cucumber-html-report/jsonreport","com.cucumber.listener.ExtentCucumberFormatter:reports/report.html"}
+,
+tags = {"@TC_01","@TC_02","@TC_03","@TC_04","@TC_05"},
 glue = "com/stepdefinition",
 monochrome = true
 
