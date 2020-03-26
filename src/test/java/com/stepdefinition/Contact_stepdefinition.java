@@ -1,5 +1,7 @@
 package com.stepdefinition;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 
 import com.pages.Contact_page;
@@ -38,7 +40,7 @@ WebDriver driver;
 	}
 
 	@Then("^the user get a pop window message$")
-	public void the_user_get_a_pop_window_message() throws InterruptedException  {
+	public void the_user_get_a_pop_window_message() throws InterruptedException, IOException  {
 	   
 		
 		con.Get_message();

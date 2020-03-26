@@ -36,20 +36,25 @@ public class Signup_stepdefinition {
 	}
 
 	@When("^the user enter the username and password and clicks on singup$")
-	public void the_user_enter_the_username_and_password_and_clicks_on_singup() throws IOException  {
+	public void the_user_enter_the_username_and_password_and_clicks_on_singup() throws IOException, InterruptedException   {
 	    
-		
-		
-		sign.Signup_details(1);     
-		
-	}
-
-	@Then("^take a Screenshot of Sign up$")
-	public void take_a_Screenshot_of_Sign_up() throws InterruptedException   {
-	   
-		
+		for(int j=1;j<=5;j++) {
+		sign.Signup_details(j);  
 		sign.Signup_buttonclick();
+		sign.Launch_Application("https://www.demoblaze.com/");
+		sign.Signup_link();
+
+		}
+	}
+	@Then("^take a Screenshot of Sign up$")
+	public void take_a_Screenshot_of_Sign_up() throws InterruptedException, IOException   {
+	   
+		sign.Screenshot_signupform();
+			
+			
+		}
 		
+			
 	}
 
 
@@ -57,4 +62,4 @@ public class Signup_stepdefinition {
 
 	
 	
-}
+

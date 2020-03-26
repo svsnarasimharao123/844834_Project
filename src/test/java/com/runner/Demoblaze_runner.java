@@ -1,5 +1,6 @@
 package com.runner;
 
+import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
@@ -18,4 +19,16 @@ monochrome = true                                     //To diplay the console ou
 
 public class Demoblaze_runner {
 
-}
+
+		@AfterClass
+		  public static void extendReport() 
+		{
+		     
+		}
+	}
+	
+	
+	
+	
+	
+

@@ -1,5 +1,7 @@
 package com.stepdefinition;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 
 import com.pages.Description_page;
@@ -25,10 +27,11 @@ WebDriver driver;
 	}
 
 	@When("^the user scrolldown the website page$")
-	public void the_user_scrolldown_the_website_page() throws InterruptedException  {
+	public void the_user_scrolldown_the_website_page() throws InterruptedException, IOException  {
 	
 		
 		text.Scroll_down();
+		text.Screenshot_Des();
 	    
 	}
 

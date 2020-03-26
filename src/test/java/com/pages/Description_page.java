@@ -1,10 +1,15 @@
 package com.pages;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -52,13 +57,18 @@ public class Description_page {
 	}
 	
 	public void Scroll_down() throws InterruptedException
-	
 	{
 		
-		
+		Thread.sleep(2000);
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("window.scrollBy(0,10000)");
 		Thread.sleep(2000);
+	}
+public void Screenshot_Des() throws IOException {	
+		TakesScreenshot ts=((TakesScreenshot)driver);
+		File Store=ts.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(Store,new File("E:\\SVSSNR\\SVSSNRPROJECT\\844834_Project\\src\\test\\resources\\Screenshots\\Descritoin1.png"));
+		
 		
 	}
 	

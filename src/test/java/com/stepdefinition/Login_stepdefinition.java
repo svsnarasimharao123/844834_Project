@@ -1,5 +1,7 @@
 package com.stepdefinition;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 
 import com.pages.Login_page;
@@ -27,14 +29,14 @@ WebDriver driver;
 	}
 
 	@When("^the user enter username as \"([^\"]*)\" & password \"([^\"]*)\"$")
-	public void the_user_enter_username_as_password(String username, String password) {
+	public void the_user_enter_username_as_password(String username, String password) throws InterruptedException {
 		
 		
 		login.Enter_logindetails(username, password);
 	}
 
 	@Then("^click on login button$")
-	public void click_on_login_button() throws InterruptedException  {
+	public void click_on_login_button() throws InterruptedException, IOException  {
 		login.login_buttonclick();
 		
 	}

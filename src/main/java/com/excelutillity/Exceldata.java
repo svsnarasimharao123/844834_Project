@@ -15,7 +15,7 @@ public class Exceldata {
 	public  String excel_username(int i) throws IOException {
 		  
 		  FileInputStream fil = new FileInputStream(new File("E:\\SVSSNR\\SVSSNRPROJECT\\844834_Project\\src\\test\\resources\\Testdata\\Data.xlsx"));
-		  @SuppressWarnings("resource")
+		  
 		  XSSFWorkbook workbook = new XSSFWorkbook(fil);
 		  XSSFSheet sheet=workbook.getSheet("Signupdata");
 		  
@@ -31,7 +31,7 @@ public class Exceldata {
 	public  String excel_password(int i) throws IOException {
 		  
 		  FileInputStream fil = new FileInputStream(new File("E:\\SVSSNR\\SVSSNRPROJECT\\844834_Project\\src\\test\\resources\\Testdata\\Data.xlsx"));
-		  @SuppressWarnings("resource")
+		  
 		  XSSFWorkbook workbook = new XSSFWorkbook(fil);
 		  XSSFSheet sheet=workbook.getSheet("Signupdata");
 		  
