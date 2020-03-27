@@ -20,42 +20,43 @@ public class Login_page {
 	{
 		this.driver=driver;
 	}
-	public void application(String browser,String url)
+	public void application(String browser,String url)                                       //Method to launch the browser and the application
 	{
 		try {
 			
 			
-			// To launch Chrome Browser
+			                                                                                  // To launch Chrome Browser
 			 if (browser.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver","src\\test\\resources\\Drivers\\chromedriver.exe");
 				driver=new ChromeDriver();
 			}
 			 
-			//To launch firefox Browser
+			                                                                                    //To launch firefox Browser
 			else if (browser.equalsIgnoreCase("firefox")) {
 				System.setProperty("webdriver.gecko.driver","src\\test\\resources\\Drivers\\geckodriver.exe");
 				driver = new FirefoxDriver();
 			}
 			 
-			 
-			//to maximize the window
-			driver.manage().window().maximize(); 
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			driver.get(url);
+			                                                                              //To maximize the window
+			 	driver.manage().window().maximize(); 
+			 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			 	driver.get(url);
 		
 		} catch (WebDriverException e) 
 		{
 			System.out.println("Browser could not be launched");
 		}
 	}
-		public void Login_linkclick() {
+	
+	public void Login_linkclick()                                              //Method to click on Login link in the website
+	{
 			
 			driver.findElement(By.xpath("//a[@id='login2']")).click();
 			
 			
 		}
 		
-		public void Enter_logindetails(String username,String password) throws InterruptedException {
+	public void Enter_logindetails(String username,String password) throws InterruptedException {     //Method to pass the username and password from scenario outline examples
 			
 			
 			driver.findElement(By.id("loginusername")).sendKeys(username);
@@ -65,19 +66,20 @@ public class Login_page {
 			
 		}
 		
-	public void login_buttonclick() throws InterruptedException, IOException  {
+	public void login_buttonclick() throws InterruptedException, IOException  {               //Method to click the login button and taking screenshot
+		
 		driver.findElement(By.xpath("//*[@id=\"logInModal\"]/div/div/div[3]/button[2]")).click();
 		Thread.sleep(5000);
+		//To take screenshot
 		TakesScreenshot ts=((TakesScreenshot)driver);
 		File Store=ts.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(Store,new File("E:\\SVSSNR\\SVSSNRPROJECT\\844834_Project\\src\\test\\resources\\Screenshots\\login1.png"));
+		FileUtils.copyFile(Store,new File("E:\\SVSSNR\\SVSSNRPROJECT\\844834_Project\\src\\test\\resources\\Screenshots\\login1.png")); 
 		
 		Thread.sleep(3000);
-		driver.close();
+		driver.close();                                                               //Closes the current window
 		
-	         }
-		
-		
+	    }
+			
 	}
 	
 	

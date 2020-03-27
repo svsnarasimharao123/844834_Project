@@ -21,7 +21,7 @@ public class Signup_page {
 	{
 		this.driver=driver;
 	}
-	public void Launchingbrowser(String browser)
+	public void Launchingbrowser(String browser)                              //Method to launch the browser
 	{
 		try {
 			
@@ -39,8 +39,8 @@ public class Signup_page {
 			}
 			 
 			 																//To maximize the window
-			driver.manage().window().maximize(); 
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			    driver.manage().window().maximize(); 
+			    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			
 		
 		} catch (WebDriverException e) 
@@ -50,57 +50,57 @@ public class Signup_page {
 	
 	}
 		
-	         public void Launch_Application(String Url) {
+	      public void Launch_Application(String Url) {                          // Method to launch the application
 		
 		
-		        driver.get(Url);								 //To launch demablaze application
-	            }
+		        driver.get(Url);								 
+	      }
 
+          public void Signup_link() throws InterruptedException {                //To click on Signup_button
+	
+        	  driver.findElement(By.xpath("//a[@id='signin2']")).click();           
+	
+        	  Thread.sleep(1000);
+	
+          	}
 
+         public void Signup_details(int i) throws IOException {                   //Method to send username and password from Excelsheet
+	
+	
+        	 Exceldata ex=new Exceldata();
+        	 driver.findElement(By.xpath("//*[@id=\"sign-username\"]")).sendKeys(ex.excel_username(i));
+        	 driver.findElement(By.xpath("//*[@id=\"sign-password\"]")).sendKeys(ex.excel_password(i));
+	
+         	}
 
-          public void Signup_link() throws InterruptedException {
+         public void Signup_buttonclick() throws InterruptedException {               //Method to click sign up button
 	
-	driver.findElement(By.xpath("//a[@id='signin2']")).click();           //To click on Signup_button
+        	 driver.findElement(By.xpath("//*[@id=\"signInModal\"]/div/div/div[3]/button[2]")).click();
+        	 Thread.sleep(5000);
+        	 //Popup window alert handling
+        	 Alert alert=driver.switchTo().alert();
+        	 String s=driver.switchTo().alert().getText();                            //Getting the the text from popup window
+        	 System.out.println(s);                                                   //To print the text acquired from the popup window
+        	 Thread.sleep(1000);
+        	 alert.accept();
 	
-	Thread.sleep(1000);
+           }
 	
-}
+        public void Screenshot_signupform() throws IOException, InterruptedException {    //Method to take screen shot of sign up form
+		
+        	Thread.sleep(1000);
+        	TakesScreenshot ts=((TakesScreenshot)driver);
+        	File Store=ts.getScreenshotAs(OutputType.FILE);
+        	FileUtils.copyFile(Store,new File("E:\\SVSSNR\\SVSSNRPROJECT\\844834_Project\\src\\test\\resources\\Screenshots\\Signup1.png"));
+        	Thread.sleep(1000);
+        	
+        	driver.close();                                                         //Closes the current window
+	
+	
+        
+        }
 
-public void Signup_details(int i) throws IOException {
-	
-	
-	Exceldata ex=new Exceldata();
-	driver.findElement(By.xpath("//*[@id=\"sign-username\"]")).sendKeys(ex.excel_username(i));
-	driver.findElement(By.xpath("//*[@id=\"sign-password\"]")).sendKeys(ex.excel_password(i));
-	
 	}
-
-public void Signup_buttonclick() throws InterruptedException {
-	
-	driver.findElement(By.xpath("//*[@id=\"signInModal\"]/div/div/div[3]/button[2]")).click();
-	Thread.sleep(5000);
-	Alert alert=driver.switchTo().alert();
-	String s=driver.switchTo().alert().getText();
-	System.out.println(s);
-	Thread.sleep(2000);
-	alert.accept();
-	
-}
-	public void Screenshot_signupform() throws IOException, InterruptedException {
-		
-		Thread.sleep(1000);
-		TakesScreenshot ts=((TakesScreenshot)driver);
-		File Store=ts.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(Store,new File("E:\\SVSSNR\\SVSSNRPROJECT\\844834_Project\\src\\test\\resources\\Screenshots\\Signup1.png"));
-		Thread.sleep(1000);
-	    driver.close();
-	
-	
-	}
-	
-
-
-}
 
 
 

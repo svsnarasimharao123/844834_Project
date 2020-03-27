@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="5" time="183.877653">
+    <testcase classname="Demoblaze website" name="Sign up with demoblaze website" time="101.070623">
+        <system-out><![CDATA[Given the user launches the browser.........................................passed
+When the user opens the application.........................................passed
+When the user clicks the sign up link.......................................passed
+When the user enter the username and password and clicks on singup..........passed
+Then take a Screenshot of Sign up...........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Demoblaze website" name="Login in to the demoblaze website" time="26.218627">
+        <system-out><![CDATA[Given the user launch the application.......................................passed
+When the user clicks on login link..........................................passed
+When the user enter username as "Narasimharao123" & password "narasimharao123".passed
+Then click on login button..................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Demoblaze website" name="Selecting the Monitors from the demobalze application" time="15.388497">
+        <system-out><![CDATA[Given the user launch the demoblaze application.............................passed
+When the user clicks on montiors under categories...........................passed
+When the user click on the reuired monitor and added to cart................passed
+Then the user get a message.................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Demoblaze website" name="Providing the contact details" time="19.619494">
+        <system-out><![CDATA[Given the user launch the demoblaze site....................................passed
+When the user clicks on contact link........................................passed
+When the user enter the email name and message..............................passed
+Then the user get a pop window message......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Demoblaze website" name="Getting the website description" time="21.580412">
+        <system-out><![CDATA[Given the user launches the demoblaze website...............................passed
+When the user scrolldown the website page...................................passed
+Then the user check the information available and get the description on console.passed
+]]></system-out>
+    </testcase>
+</testsuite>
