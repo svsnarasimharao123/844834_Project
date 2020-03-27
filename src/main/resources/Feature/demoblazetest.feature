@@ -1,4 +1,4 @@
-@Demoblaze_feature
+@Demoblazefeature
 Feature:Demoblaze website
 
 @TC_01

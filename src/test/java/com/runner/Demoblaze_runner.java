@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 			features = "src\\main\\resources\\Feature\\demoblazetest.feature",     //Feature file path
 			// To Generate Extent, html,json,junit reports
-			plugin = {"pretty", "html:reports/cucumber-html-report","json:reports/cucumber-html-report/jsonreport","junit:reports/cucumber-html-report/junitreport"},
+			plugin = {"pretty:target/json-report.json","html:target/cucumber-html-report","junit:target/junit-xml-report.xml"},
 			tags = {"@TC_01,@TC_02,@TC_03,@TC_04,@TC_05"},
             glue = "com/stepdefinition",                           //Path of stepdefinition file
             monochrome = true ,                                    //To diplay the console output in readable format

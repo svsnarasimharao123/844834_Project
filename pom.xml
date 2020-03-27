@@ -4,9 +4,7 @@
   <artifactId>844834_Project</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
-  
-  
-  <dependency>
+<dependency>
 <groupId>org.seleniumhq.selenium</groupId>
 <artifactId>selenium-java</artifactId>
 <version>3.7.1</version>
@@ -31,11 +29,6 @@
 <groupId>info.cukes</groupId>
 <artifactId>cucumber-jvm-deps</artifactId>
 <version>1.0.5</version>
-</dependency>
-<dependency>
-<groupId>info.cukes</groupId>
-<artifactId>cucumber-junit</artifactId>
-<version>1.2.5</version>
 </dependency>
 <dependency>
 <groupId>com.vimalselvam</groupId>
@@ -90,7 +83,13 @@
     <artifactId>cucumber-reporting</artifactId>
     <version>5.1.1</version>
 </dependency>
+<dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>1.2.5</version>
+    <scope>test</scope>
+</dependency>
 
-
+  
   </dependencies>
 </project>
